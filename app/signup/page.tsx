@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label'
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 
 const Signup = () => {
@@ -34,10 +34,10 @@ const Signup = () => {
     } catch (error: any) {
       console.log('Signup Failed',  error.message)
       toast.error(error.message);
-    } finally {
-      setLoading(false)
-    }
-  }
+    } finally { 
+      setLoading(false) 
+    } 
+  } 
 
   // useEffect(()=>{
   //   if(user.email.length >0 || user.password.length>0 || user.confirmPassword.length>0 || user.username.length>0){
@@ -48,7 +48,7 @@ const Signup = () => {
   // },[user])
 
   return (
-    <div className='m-auto w-2/4'>
+    <div className='m-auto w-1/4 border border-gray-300 p-10 rounded-lg'>
       <h1>{loading ? 'Processing...' : 'Signup'}</h1>
       <Label>Email</Label>
       <br />
@@ -69,6 +69,7 @@ const Signup = () => {
       <Button 
       onClick={onSignup}
       >Submit</Button>
+      <br />
       <Link href='/login'>Visit Login Page</Link>
     </div>                                                                                                                                                                      
   )
